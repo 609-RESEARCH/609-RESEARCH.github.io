@@ -217,7 +217,6 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
   overflow: hidden;
   background: var(--signal);
   color: var(--ink);
-  transition: opacity .2s;
 }
 .project:nth-child(3n+2) .project-media { background: var(--paper); }
 .project:nth-child(3n+3) .project-media { background: var(--ink); color: var(--paper); outline: 1px solid #3a3a38; outline-offset: -1px; }
@@ -226,7 +225,6 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
 /* App icons: centred on paper so a dark icon tile reads */
 .project .project-media.icon { background: var(--paper); }
 .project-media.icon img { width: auto; height: 62%; object-fit: contain; }
-.project a:hover .project-media { opacity: .85; }
 .project-meta {
   display: flex;
   justify-content: space-between;
