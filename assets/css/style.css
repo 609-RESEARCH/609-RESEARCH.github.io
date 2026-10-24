@@ -83,7 +83,7 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: clamp(14px, 2vw, 24px);
+  gap: 24px;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: .02em;
@@ -91,9 +91,6 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
 .nav-link { color: var(--signal); font-weight: 700; transition: color .15s; }
 .nav-link:hover { color: var(--paper); }
 .nav-link[aria-current] { color: var(--paper); border-bottom: 2px solid var(--signal); }
-.nav-gh { display: flex; color: var(--paper); transition: color .15s; }
-.nav-gh:hover { color: var(--signal); }
-.nav-gh svg { width: 20px; height: 20px; fill: currentColor; }
 .nav-home { margin-right: auto; font-size: 22px; font-weight: 800; letter-spacing: -.02em; line-height: 1; }
 
 .hero-body { display: flex; flex-direction: column; gap: clamp(20px, 3vw, 40px); }
@@ -173,7 +170,7 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
 }
 .back:hover { color: var(--signal); translate: -6px 0; }
 .back svg {
-  width: clamp(104px, 12vw, 176px);
+  width: clamp(112px, 12vw, 176px);
   height: auto;
   overflow: visible;
 }
