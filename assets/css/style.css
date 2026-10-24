@@ -22,10 +22,11 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-/* Grain lives on the canvas so it also fills overscroll and the area under mobile browser bars */
+/* Grain lives on the canvas so it also fills overscroll and the area under mobile browser bars.
+   A PNG tile rather than an SVG noise filter: iOS Safari doesn't render filters in background images. */
 html {
   -webkit-text-size-adjust: 100%;
-  background: var(--ink-grain) url('../img/grain.svg') 0 0 / 240px;
+  background: var(--ink-grain) url('../img/grain.png') 0 0 / 240px;
 }
 body {
   margin: 0;
