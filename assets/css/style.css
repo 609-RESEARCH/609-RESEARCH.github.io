@@ -15,16 +15,20 @@
 
 :root {
   --ink: #0D0D0C;
+  --ink-grain: #181817; /* average of ink + 13% grain, what the eye (and Safari's bar tint) sees */
   --paper: #F2F1ED;
   --signal: #FF4419;
   --pad: clamp(16px, 4vw, 56px);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+/* Grain lives on the canvas so it also fills overscroll and the area under mobile browser bars */
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--ink-grain) url('../img/grain.svg') 0 0 / 240px;
+}
 body {
   margin: 0;
-  background: var(--ink);
   color: var(--paper);
   font-family: 'Haskoy', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -42,20 +46,11 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
   min-height: 100vh;
   min-height: 100svh;
   padding: var(--pad);
+  padding: max(var(--pad), env(safe-area-inset-top)) max(var(--pad), env(safe-area-inset-right)) max(var(--pad), env(safe-area-inset-bottom)) max(var(--pad), env(safe-area-inset-left));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 48px;
-}
-.hero::after,
-.page::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('../img/grain.svg') 0 0 / 240px;
-  opacity: .13;
-  pointer-events: none;
-  z-index: -1;
 }
 .hero-rings {
   position: absolute;
@@ -127,7 +122,7 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
-  gap: 16px 24px;
+  gap: 16px;
   font-size: 13px;
   line-height: 1.35;
   text-transform: uppercase;
@@ -135,6 +130,7 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
 .index .mono {
   font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
   font-size: 12px;
+  letter-spacing: 0;
   text-align: right;
 }
 
@@ -153,6 +149,7 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 .mono { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: .02em; }
 
