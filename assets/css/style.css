@@ -65,7 +65,7 @@ a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
   animation: float 24s ease-in-out infinite;
 }
 @media (max-width: 719px) {
-  .hero-rings { top: 34%; right: -30vw; width: 110vw; }
+  .hero-rings { top: 34%; right: -42vw; width: 135vw; }
 }
 
 /* Slow drift: `translate`/`rotate`/`scale` stack on top of the centring transform */
